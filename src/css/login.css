@@ -1,0 +1,78 @@
+.message_alert_root {
+    font-family:
+       -apple-system,
+       BlinkMacSystemFont,
+       Helvetica Neue,
+       Helvetica,
+       Segoe UI,
+       Arial,
+       Roboto,
+       PingFang SC,
+       Hiragino Sans GB,
+       Microsoft Yahei,
+       sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    max-width: 12.8rem;
+    width: 80%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100000;
+    border-radius: 14px;
+ }
+
+ .message_alert_text {
+    font-family:
+       -apple-system,
+       BlinkMacSystemFont,
+       Helvetica Neue,
+       Helvetica,
+       Segoe UI,
+       Arial,
+       Roboto,
+       PingFang SC,
+       Hiragino Sans GB,
+       Microsoft Yahei,
+       sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    transition: opacity 0.5s;
+    animation: bounce-in-data-v-1dcba851 0.5s;
+    position: relative;
+    padding: 0.32rem 0.66667rem;
+    text-align: center;
+    line-height: 0.64rem;
+    overflow: hidden;
+    font-size: 0.37333rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+ }
+
+ @keyframes bounce-in-data-v-1dcba851 {
+    0% {
+       transform: scale(0.4);
+    }
+
+    50% {
+       transform: scale(1.03);
+    }
+
+    to {
+       transform: scale(1);
+    }
+ }
+
+
+ .show-list{
+    opacity: 1;
+    height: 6rem;
+ }
+

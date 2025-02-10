@@ -1,0 +1,10 @@
+.banner_root_p {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+ }
+
+ .banner_root_p .banner-title {
+    margin-right: auto;
+ }
