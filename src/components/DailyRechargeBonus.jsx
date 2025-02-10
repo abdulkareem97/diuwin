@@ -18,7 +18,7 @@ const DailyRechargeBonus = () => {
   // Fetch daily recharge bonus
   const fetchDailyRechargeBonus = async () => {
     try {
-      const response = await axios.get("/api/activity/daily_recharge_bonus", {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/activity/daily_recharge_bonus`, {
         withCredentials: true,
       });
       console.log('called')
@@ -37,7 +37,7 @@ const DailyRechargeBonus = () => {
   // Handle claim bonus
   const claimBonus = async (id) => {
     try {
-      const response = await axios.post("/api/activity/daily_recharge_bonus/claim", { id });
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/activity/daily_recharge_bonus/claim`, { id });
       if (response.data.status) {
         setMessage(response.data.message);
         setIsSuccess(true);

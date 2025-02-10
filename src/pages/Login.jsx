@@ -65,7 +65,7 @@ const LoginComponent = () => {
         }
 
         try {
-            const response = await fetch("/api/webapi/login", {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/webapi/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

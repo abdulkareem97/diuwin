@@ -25,7 +25,7 @@ const Promotion = () => {
 
     const fetchUser = async () => {
         try {
-            const response = await axios.get("/api/webapi/GetUserInfo");
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/webapi/GetUserInfo`);
             setUserData(response.data.data);
         } catch (error) {
             console.error("Failed to fetch user data:", error);
@@ -34,7 +34,7 @@ const Promotion = () => {
 
     const initSubordinatesData = async () => {
         try {
-            const response = await axios.get("/api/subordinates/summary");
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/subordinates/summary`);
             setSubordinatesData(response.data.data);
         } catch (error) {
             console.error("Failed to fetch subordinates data:", error);

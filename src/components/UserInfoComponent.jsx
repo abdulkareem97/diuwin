@@ -42,7 +42,7 @@ const UserInfoComponent = () => {
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                const response = await axios.get("/api/webapi/GetUserInfo");
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/webapi/GetUserInfo`);
                 // if (userData?.level === 1) {
                 //     $("#admin_zone").show();
                 //  }

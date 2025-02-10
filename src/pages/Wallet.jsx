@@ -42,7 +42,7 @@ const Wallet = () => {
   // Fetch user data
   const fetchUser = async () => {
     try {
-      const response = await axios.get('/api/webapi/GetUserInfo');
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/webapi/GetUserInfo`);
       setUserData(response?.data?.data);
       setUserDataFull(response?.data);
     } catch (error) {
@@ -100,7 +100,7 @@ const Wallet = () => {
       }
     }, [userData, userDataFull]);
 
-    
+
   const handleNavigation = (path) => {
     navigate(path);
   };
