@@ -7,6 +7,7 @@ import withdrawHistory from '../images/assets/png/withdrawHistory-572eb30b.png';
 import LoadingComponent from '../components/LoadingComponent';
 import '../css/pageWallet85.css'
 import axios from 'axios';
+import apiAxios from '../apiAxios';
 
 
 
@@ -42,7 +43,7 @@ const Wallet = () => {
   // Fetch user data
   const fetchUser = async () => {
     try {
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/webapi/GetUserInfo`);
+      const response = await apiAxios.get(`/api/webapi/GetUserInfo`);
       setUserData(response?.data?.data);
       setUserDataFull(response?.data);
     } catch (error) {

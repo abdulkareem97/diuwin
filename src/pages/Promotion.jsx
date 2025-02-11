@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import iconService from '../images/assets/png/icon_sevice-8a1f5628.png'; // Adjust the path as necessary
 import '../css/pagePromotiond7.css'
+import apiAxios from '../apiAxios';
 
 const Promotion = () => {
     const userInfoTypes = {
@@ -25,7 +26,9 @@ const Promotion = () => {
 
     const fetchUser = async () => {
         try {
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/webapi/GetUserInfo`);
+            // console.log('hello');
+            const response = await apiAxios.get(`/api/webapi/GetUserInfo`);
+            // console.log(response)
             setUserData(response.data.data);
         } catch (error) {
             console.error("Failed to fetch user data:", error);
@@ -34,7 +37,7 @@ const Promotion = () => {
 
     const initSubordinatesData = async () => {
         try {
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/subordinates/summary`);
+            const response = await apiAxios.get(`/api/subordinates/summary`);
             setSubordinatesData(response.data.data);
         } catch (error) {
             console.error("Failed to fetch subordinates data:", error);

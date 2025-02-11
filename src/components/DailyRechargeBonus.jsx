@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import apiAxios from "../apiAxios";
 
 const DailyRechargeBonus = () => {
   const [bonusList, setBonusList] = useState([]);
@@ -18,9 +19,7 @@ const DailyRechargeBonus = () => {
   // Fetch daily recharge bonus
   const fetchDailyRechargeBonus = async () => {
     try {
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/activity/daily_recharge_bonus`, {
-        withCredentials: true,
-      });
+      const response = await apiAxios.get(`/api/activity/daily_recharge_bonus`);
       console.log('called')
       if (response.data.status) {
         setBonusList(response.data.data);
@@ -37,7 +36,7 @@ const DailyRechargeBonus = () => {
   // Handle claim bonus
   const claimBonus = async (id) => {
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/activity/daily_recharge_bonus/claim`, { id });
+      const response = await apiAxios.post(`/api/activity/daily_recharge_bonus/claim`, { id });
       if (response.data.status) {
         setMessage(response.data.message);
         setIsSuccess(true);

@@ -5,6 +5,7 @@ import avatarPlaceholder from '../images/assets/png/avatar-2f23f3bd.png';
 import axios from 'axios';
 import { NavLink, useNavigate } from 'react-router-dom';
 import tipImage from "../images/assets/png/tip-2298bb83.png";
+import apiAxios from '../apiAxios';
 const editPencil = ""
 const UserInfoComponent = () => {
     const navigate = useNavigate();
@@ -42,7 +43,7 @@ const UserInfoComponent = () => {
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/webapi/GetUserInfo`);
+                const response = await apiAxios.get(`/api/webapi/GetUserInfo`);
                 // if (userData?.level === 1) {
                 //     $("#admin_zone").show();
                 //  }
@@ -67,7 +68,7 @@ const UserInfoComponent = () => {
                     <div className="userInfo__container-content-wrapper" data-v-5bd44e74="">
                         <div className="userInfo__container-content__avatar" data-v-5bd44e74="" >
                             <div onClick={() => (window.location.href = 'settings/change_avatar')} id="avatar_display" className="userAvatar" data-v-5bd44e74="" >
-                                <img src={userData ? `/assets/png/${userData.avatar}` : avatarImg} alt="User Avatar" />
+                                <img src={userData ? `../images/assets/png/${userData.avatar}` : avatarImg} alt="User Avatar" />
                             </div>
                         </div>
                         <div className="userInfo__container-content__name" data-v-5bd44e74="" >
